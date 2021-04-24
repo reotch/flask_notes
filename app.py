@@ -1,3 +1,4 @@
+import os
 import sqlite3
 import markdown
 
@@ -9,7 +10,11 @@ def get_db_connection():
     return conn
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '66562c5f55e4623c09a8d28a0691da7a4d6e230aeffc56e475'
+
+environment_configuration = os.environ['CONFIGURATION_SETUP']
+app.config.from_object(environment_configuration)
+
+
 
 @app.route('/')
 def index():
@@ -40,3 +45,6 @@ def create():
         return redirect(url_for('index'))
 
     return render_template('create.html')
+
+if __name__ == '__main__':
+    app.run()
