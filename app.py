@@ -3,6 +3,7 @@ import sqlite3
 import markdown
 
 from flask import Flask, render_template, request, flash, redirect, url_for
+from dotenv import load_dotenv
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -10,11 +11,7 @@ def get_db_connection():
     return conn
 
 app = Flask(__name__)
-
-environment_configuration = os.environ['CONFIGURATION_SETUP']
-app.config.from_object(environment_configuration)
-
-
+load_dotenv()
 
 @app.route('/')
 def index():

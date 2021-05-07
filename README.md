@@ -4,7 +4,12 @@ This project is based on a tutorial on [Digital Ocean](https://www.digitalocean.
 
 Base tutorial is completed. 
 
-TODO:
+## Notes
+
+- config.py needed, but not included in the repository. 
+- This has been fun, but the core functionality will be moved to a Django project
+
+## TODO:
 
 - Add ability to edit posts
 - Post individual pages
