@@ -25,6 +25,8 @@ def index():
         note['content'] = markdown.markdown(note['content'])
         notes.append(note)
 
+    notes.reverse()
+
     return render_template('index.html', notes=notes)
 
 @app.route('/create/', methods=('GET', 'POST'))
