@@ -29,6 +29,10 @@ def index():
 
     return render_template('index.html', notes=notes)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/create/', methods=('GET', 'POST'))
 def create():
     conn = get_db_connection()
